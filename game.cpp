@@ -138,7 +138,7 @@ bool Game::checkFood()
         bool validPosition = false;
         int randX;
         int randY;
-        while (!validPosition)
+        do
         {
             validPosition = true;
             randX = rand() % 19;
@@ -152,7 +152,7 @@ bool Game::checkFood()
                     break;
                 }
             }
-        }
+        } while (!validPosition)
         this->state.foodPoint = Point(randX, randY);
         return true;
     }
